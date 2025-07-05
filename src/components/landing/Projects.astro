@@ -1,34 +1,48 @@
 ---
+// Assets
+import { Image } from "astro:assets";
+import Mesh from "@/images/projects/mesh.png";
+import PP from "@/images/projects/pp.png";
+import Oxbow from "@/images/projects/oxbow.png";
+import Lexington from "@/images/projects/lexington.png";
+import Doodles from "@/images/projects/doodles.png";
+import Caf from "@/images/projects/caf.png";
+
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 // Icons
 const data = [
   {
+    image: Mesh,
     year: "2025",
     title: "CSS Mesh",
     link: "https://cssmesh.com",
     description: `A collection of beautiful mesh gradients made with pure CSS. Click on any gradient to copy its CSS.`,
   },
   {
+    image: PP,
     year: "2025",
     link: "https://pricingpatterns.com",
     title: "Pricing Patterns",
     description: `Real-world pricing page examples.`,
   },
   {
+    image: Oxbow,
     year: "2024",
     link: "https://oxbowui.com",
     title: "Oxbow UI ",
     description: `Components and UI Blocks crafted with Tailwind CSS. Clean, responsive, and simple to customize.`,
   },
   {
+    image: Lexington,
     year: "2023",
     title: "Lexington Themes",
     link: "https://lexingtonthemes.com",
     description: `Premium multipage themes crafted with Astro and Tailwind CSS.`,
   },
   {
+    image: Doodles,
     year: "2020",
     title: "SVG Doodles",
     link: "https://svgdoodles.com",
@@ -36,6 +50,7 @@ const data = [
 `,
   },
   {
+    image: Caf,
     year: "2018",
     title: "Colors & Fonts",
     link: "https://colorsandfonts.com",
@@ -58,27 +73,40 @@ const data = [
         {
           data.map((project) => (
             <article class="group relative grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-start ">
+                 <div class="absolute -inset-x-1 -inset-y-4 z-0 scale-95 bg-base-50 dark:bg-base-800/20    opacity-0 transition group-hover:scale-100 group-hover:opacity-100 -inset-x-4 rounded-2xl duration-300 " />
               <div class="lg:col-span-2">
-                <Text
-                  tag="h3"
-                  variant="textSM"
-                  class=" font-medium tracking-tight text-base-900 dark:text-white    "
-                >
-                  <div class="absolute -inset-x-1 -inset-y-4 z-0 scale-95 bg-base-50 dark:bg-base-800/20    opacity-0 transition group-hover:scale-100 group-hover:opacity-100 -inset-x-4 rounded-2xl duration-300 " />
-                  <a href={project.link}>
-                    <>
-                      <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
-                      <span class="relative z-10"> {project.title}</span>
-                    </>
-                  </a>
-                </Text>
-                <Text
-                  tag="p"
-                  variant="textXS"
-                  class="relative z-10 mt-1 text-base-600 dark:text-base-500      "
-                >
-                  {project.description}
-                </Text>
+               <div class="flex items-center gap-4 relative">
+                  <Image
+                    src={project.image}
+                    alt="Michael Andreuzza"
+                    width={400}
+                    height={400}
+                    loading="eager"
+                    decoding="async"
+                    class="rounded-lg size-12 object-cover ovjet-center relative"
+                  />
+                  <div>
+                    <Text
+                      tag="h3"
+                      variant="textSM"
+                      class=" font-medium tracking-tight text-base-900 dark:text-white  "
+                    >
+                      <a href={project.link}>
+                        <>
+                          <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
+                          <span class="relative z-10"> {project.title}</span>
+                        </>
+                      </a>
+                    </Text>
+                  <Text
+                    tag="p"
+                    variant="textXS"
+                    class="relative z-10 text-base-600 dark:text-base-500      "
+                  >
+                    {project.description}
+                  </Text>
+                  </div>
+               </div>
               </div>
               <Text
                 tag="p"

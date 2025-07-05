@@ -42,15 +42,13 @@ Updated on 20th June 2025
 
 - Full redesign
 - Added light/dark mode
-- Added navigation
-- Added blog and content collections
+
 ## This update includes:
  Added Image component from Astro
   The Astro Image component is coming back to the themes
 
 - Reusable components
   This template now includes reusable components, such as the `Text` component:
-
 - Button Component  
   A customizable button component with options to fit your design needs:
 

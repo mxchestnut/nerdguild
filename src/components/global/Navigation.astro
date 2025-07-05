@@ -6,11 +6,9 @@ import Button from "@/components/fundations/elements/Button.astro";
 // Icons
 import Eye from "@/components/fundations/icons/Eye.astro";
 import Cart from "@/components/fundations/icons/Cart.astro";
-import Book from "@/components/fundations/icons/Book.astro";
 // Scripts
 import ThemeToggle from "@/components/assets/ThemeToggle.astro";
 ---
-
 <div class="fixed bottom-2 left-0 right-0 flex justify-center z-50">
   <div class="bg-base-200 dark:bg-base-950 rounded-xl p-0.5 w-auto">
     <div class="flex items-center justify-between p-0.5 gap-1">
@@ -22,7 +20,6 @@ import ThemeToggle from "@/components/assets/ThemeToggle.astro";
       >
         /
       </a>
-
       <Button
         isLink={true}
         iconOnly
@@ -33,20 +30,7 @@ import ThemeToggle from "@/components/assets/ThemeToggle.astro";
       >
         <Eye slot="icon" size="sm" />
       </Button>
-
-      <Button
-        isLink={true}
-        iconOnly
-        size="base"
-        variant="muted"
-        href="/blog/"
-        aria-label="Blog"
-      >
-        <Book slot="icon" size="sm" />
-      </Button>
-
       <ThemeToggle aria-label="Toggle theme" />
-
       <Button
         isLink={true}
         iconOnly

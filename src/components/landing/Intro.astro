@@ -1,4 +1,7 @@
 ---
+// Assets
+import { Image } from "astro:assets";
+import Avatar from "@/images/avatar.png";
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
@@ -9,7 +12,17 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
     <div
       class="grid grid-cols-1 gap-4 md:grid-cols-3 border-b pb-8 pt-24 border-base-200 dark:border-base-800"
     >
-      <div>
+     
+      <Image
+        src={Avatar}
+        alt="Michael Andreuzza"
+        width={400}
+        height={400}
+        loading="eager"
+        decoding="async"
+        class="rounded-2xl size-24 object-cover ovjet-center"
+      />
+      <div class="lg:col-span-2">
         <Text
           tag="h1"
           variant="textSM"
@@ -22,19 +35,19 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
           class="text-base-600 dark:text-base-600 dark:text-base-400"
           >Product Designer in Åland Islands</Text
         >
+        <Text
+          tag="p"
+          variant="textSM"
+          class="text-base-600 dark:text-base-600 dark:text-base-400 mt-4"
+        >
+          I’m a self-taught front-end developer and UI designer with a strong
+          passion for building my own projects. My philosophy revolves around
+          simplicity and practicality, focusing on straightforward principles
+          that deliver results. I value sticking to a clear plan and executing
+          it reliably, with consistency being the foundation that keeps
+          everything on track.
+        </Text>
       </div>
-      <Text
-        tag="p"
-        variant="textSM"
-        class="text-base-600 dark:text-base-600 dark:text-base-400 lg:col-span-2"
-      >
-        I’m a self-taught front-end developer and UI designer with a strong
-        passion for building my own projects. My philosophy revolves around
-        simplicity and practicality, focusing on straightforward principles that
-        deliver results. I value sticking to a clear plan and executing it
-        reliably, with consistency being the foundation that keeps everything on
-        track.
-      </Text>
     </div>
   </Wrapper>
 </section>
