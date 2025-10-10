@@ -34,7 +34,7 @@ const colors = [
       { name: "Base 800", class: "bg-base-800" },
       {
         name: "Base 900",
-        class: "bg-base-900 border-base-200 border dark:border-base-800",
+        class: "bg-base-900 border-base-200 border  ",
       },
       { name: "Base 950", class: "bg-base-950" },
     ],
@@ -45,21 +45,17 @@ const colors = [
 <BaseLayout>
   <section>
     <Wrapper variant="standard" class="pb-8 pt-24">
-      <Text
-        tag="h1"
-        variant="textSM"
-        class="font-medium text-base-900 dark:text-white"
-      >
+      <Text tag="h1" variant="textSM" class="font-medium text-base-900">
         Colors
       </Text>
-      <div class="mt-8 border-t border-base-200 dark:border-base-800">
+      <div class="mt-8 border-t border-base-200">
         {
           colors.map((color) => (
-            <div class="grid grid-cols-1 gap-4 md:grid-cols-3 border-b py-8 border-base-200 dark:border-base-800">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-3 border-b py-8 border-base-200  ">
               <Text
                 tag="p"
                 variant="textXS"
-                class="font-medium uppercase text-base-900 dark:text-white"
+                class="font-medium uppercase text-base-900  "
               >
                 {color.name}
               </Text>
@@ -69,9 +65,7 @@ const colors = [
                     <div
                       class={`size-full aspect-square rounded-md ${shade.class}`}
                     />
-                    <span class="text-xs text-base-600 dark:text-base-600 dark:text-base-400">
-                      {shade.name}
-                    </span>
+                    <span class="text-xs text-base-600    ">{shade.name}</span>
                   </div>
                 ))}
               </div>

@@ -4,20 +4,20 @@
 @custom-variant dark (&:where(.dark, .dark *));
 @theme {
   /* Typography */
-   --font-sans: Inter, sans-serif;
+  --font-sans: Inter, sans-serif;
   --font-display: InterVariable, sans-serif;
   /* accent  */
-  --color-accent-50: oklch(96.66% 0.015 282.03);
-  --color-accent-100: oklch(92.42% 0.034 280.3);
-  --color-accent-200: oklch(84.8% 0.07 279.45);
-  --color-accent-300: oklch(78.09% 0.103 278.85);
-  --color-accent-400: oklch(70.63% 0.141 275.9);
-  --color-accent-500: oklch(63.08% 0.179 273.08);
-  --color-accent-600: oklch(55.69% 0.219 268.34);
-  --color-accent-700: oklch(48.24% 0.217 265.51);
-  --color-accent-800: oklch(36.55% 0.164 265.51);
-  --color-accent-900: oklch(25.83% 0.115 265.38);
-  --color-accent-950: oklch(19.26% 0.088 265.29);
+  --color-accent-50: oklch(0.982 0.029 125.9);
+  --color-accent-100: oklch(0.961 0.065 127.2);
+  --color-accent-200: oklch(0.925 0.122 129.7);
+  --color-accent-300: oklch(0.877 0.179 131.4);
+  --color-accent-400: oklch(0.839 0.199 132.6);
+  --color-accent-500: oklch(0.744 0.209 135);
+  --color-accent-600: oklch(0.628 0.18 135.7);
+  --color-accent-700: oklch(0.517 0.143 135.4);
+  --color-accent-800: oklch(0.441 0.115 134.8);
+  --color-accent-900: oklch(0.394 0.096 135);
+  --color-accent-950: oklch(0.268 0.069 135.7);
   /* base*/
   --color-base-50: oklch(0.985 0 0);
   --color-base-100: oklch(0.97 0 0);
@@ -36,18 +36,12 @@
   font-family: Inter, sans-serif;
   font-feature-settings:
     /*-------- NUMBERS --------*/
-    /* Tabular numbers */ "tnum" 1,
-    /* Slashed zero */ "zero" 1,
-    /* Alternate one */ "cv01" 1,
-    /* Flat-top three */ "cv09" 1,
-    /* Open four */ "cv02" 1,
-    /* Open six */ "cv03" 1,
-    /* Open nine */ "cv04" 1,
-    /*-------- LETTERS --------*/
-    /* Square punctuation */ "ss08" 1,
-    /* Discretionary ligatures */ "dlig" 1,
-    /* Simplified u */ "cv06" 1,
-    /* Capital G with spur */ "cv10" 1,
-    /* Single-story a */ "cv11" 1,
-    /* Compact t */ "cv13" 1;
+    /* Tabular numbers */ "tnum"
+      1,
+    /* Slashed zero */ "zero" 1, /* Alternate one */ "cv01" 1,
+    /* Flat-top three */ "cv09" 1, /* Open four */ "cv02" 1,
+    /* Open six */ "cv03" 1, /* Open nine */ "cv04" 1,
+    /*-------- LETTERS --------*/ /* Square punctuation */ "ss08" 1,
+    /* Discretionary ligatures */ "dlig" 1, /* Simplified u */ "cv06" 1,
+    /* Capital G with spur */ "cv10" 1, /* Compact t */ "cv13" 1;
 }

@@ -1,10 +1,15 @@
 ---
-
+// assets
+import { Image } from "astro:assets";
+import swissm from "@/images/work/swissm.jpg";
+import helvetica from "@/images/work/helvetica.jpg";
+import principles from "@/images/work/principles.jpg";
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 const data = [
   {
+    image: swissm,
     period: "2023–2025",
     title: "Swiss Modernism Showcase",
     description: `Curated and designed an exhibition highlighting the evolution of Swiss modernism in graphic design, showcasing iconic works and their influence on contemporary design.`,
@@ -12,6 +17,7 @@ const data = [
     link: "#_",
   },
   {
+    image: helvetica,
     period: "2020–2023",
     title: "Helvetica Redefined",
     description: `Redesigned the Helvetica type specimen to include modern variations and applications. The work explored the typeface's versatility and its legacy in Swiss design.`,
@@ -19,6 +25,7 @@ const data = [
     link: "#_",
   },
   {
+    image: principles,
     period: "2017–2020",
     title: "Swiss Design Principles",
     description: `Developed educational materials and workshops on the core principles of Swiss design, focusing on grid systems, typography, and minimalist aesthetics.`,
@@ -31,25 +38,36 @@ const data = [
 <section>
   <Wrapper variant="standard">
     <div
-      class="grid grid-cols-1 gap-4 md:grid-cols-3 border-b py-8 border-base-200 dark:border-base-800"
+      class="grid grid-cols-1 gap-y-12 lg:gap-y-24 md:grid-cols-3 border-b py-8 border-base-200"
     >
       <div class="lg:sticky lg:top-24 lg:z-40 self-start">
-        <Text tag="h2" variant="textSM" class="text-base-900 dark:text-white">
+        <Text
+          tag="h2"
+          variant="textSM"
+          class="text-base-900 font-bold uppercase"
+        >
           Work
         </Text>
       </div>
-      <div class="flex flex-col gap-12 lg:col-span-2">
+      <div
+        class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-8"
+      >
         {
-          data.map((work, index) => (
-            <article class="group relative grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-start ">
+          data.map((work) => (
+            <article class=" relative grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-start lg:sticky ">
+              <Image
+                width={800}
+                height={600}
+                src={work.image}
+                alt={work.title}
+                class="lg:col-span-full aspect-12/7 object-cover object-top w-full"
+              />
               <div class="lg:col-span-2">
-                
                 <Text
                   tag="h3"
                   variant="textSM"
-                  class=" font-medium tracking-tight text-base-900 dark:text-white    "
+                  class="text-base-900   font-bold uppercase "
                 >
-                  <div class="absolute -inset-x-1 -inset-y-4 z-0 scale-95 bg-base-50 dark:bg-base-800/20    opacity-0 transition group-hover:scale-100 group-hover:opacity-100 -inset-x-4 rounded-2xl duration-300" />
                   <a href={work.link}>
                     <>
                       <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
@@ -60,7 +78,7 @@ const data = [
                 <Text
                   tag="p"
                   variant="textXS"
-                  class="relative z-10 mt-1 text-base-600 dark:text-base-600 dark:text-base-400      "
+                  class="relative z-10 mt-1 text-base-600          "
                 >
                   {work.description}
                 </Text>
@@ -68,7 +86,7 @@ const data = [
               <Text
                 tag="p"
                 variant="textXS"
-                class="relative z-10   flex items-center text-sm text-base-600 dark:text-base-400  lg:ml-auto"
+                class="relative z-10   flex items-center text-sm text-base-600    lg:ml-auto"
               >
                 <time datetime={work.period}> {work.period}</time>
               </Text>

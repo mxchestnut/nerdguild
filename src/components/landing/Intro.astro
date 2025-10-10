@@ -1,45 +1,48 @@
 ---
 // Assets
-import { Image } from "astro:assets";
-import Avatar from "@/images/avatar.png";
+import Logo from "@/components/assets/Logo.astro";
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 ---
 
 <section>
-  <Wrapper variant="standard">
+  <Wrapper variant="standard" class="pt-8 flex flex-col justify-between h-dvh">
+    <div class="flex flex-col lg:flex-row lg:justify-between items-start gap-8">
+      <Logo class="max-w-4xl text-black" />
+      <div class="flex gap-2 items-center w-fit order-first lg:order-none ml-auto">
+        <Text
+          tag="a"
+          variant="textXS"
+          class="text-base-900 hover:text-base-500 font-bold uppercase"
+          href="/"
+        >
+          Home</Text
+        >
+        <Text
+          tag="a"
+          variant="textXS"
+          class="text-base-900 hover:text-base-500 font-bold uppercase"
+          href="/system/overview"
+        >
+           overview</Text
+        >
+      </div>
+    </div>
+
     <div
-      class="grid grid-cols-1 gap-4 md:grid-cols-3 border-b pb-8 pt-24 border-base-200 dark:border-base-800"
+      class="grid grid-cols-1 gap-4 md:grid-cols-3 border-b pb-8 border-base-200"
     >
-     
-      <Image
-        src={Avatar}
-        alt="Michael Andreuzza"
-        width={400}
-        height={400}
-        loading="eager"
-        decoding="async"
-        class="rounded-2xl size-24 object-cover ovjet-center"
-      />
-      <div class="lg:col-span-2">
+      <div>
         <Text
           tag="h1"
-          variant="textSM"
-          class="font-medium text-base-900 dark:text-white"
-          >Michael Andreuzza</Text
-        >
-        <Text
-          tag="p"
           variant="textXS"
-          class="text-base-600 dark:text-base-600 dark:text-base-400"
+          class="text-base-900 font-bold uppercase"
           >Product Designer in Åland Islands</Text
         >
-        <Text
-          tag="p"
-          variant="textSM"
-          class="text-base-600 dark:text-base-600 dark:text-base-400 mt-4"
-        >
+      </div>
+      <div class="lg:col-span-2">
+        <Text tag="p" variant="textSM" class="text-base-600">
           I’m a self-taught front-end developer and UI designer with a strong
           passion for building my own projects. My philosophy revolves around
           simplicity and practicality, focusing on straightforward principles
