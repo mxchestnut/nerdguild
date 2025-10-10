@@ -81,6 +81,11 @@ Your content goes here
 </Wrapper>
 ```
 ------
+Updated on 10th October 2025
+
+## This update includes:
+- New design
+------
 Updated on 18th January 2024
 
 ## This update includes:
