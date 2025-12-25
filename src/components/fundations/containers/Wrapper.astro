@@ -6,9 +6,7 @@ interface Props {
 const { variant = "standard", class: extraClass = "" } = Astro.props;
 // Map each variant to its specific classes
 const variantClasses = {
-  standard: "max-w-[90rem] mx-auto px-8",
-  prose:
-    "prose prose-sm prose-headings:font-medium  text-base-600 prose-headings:text-base-900 prose-blockquote:text-base-500 prose-blockquote:font-normal prose-blockquote:tracking-normal prose-img:border prose-img:border-base-200 prose-a:text-accent-400 hover:prose-a:text-accent-500 prose-hr:border-base-300 prose-pre:border-none prose-pre:rounded-xl prose-strong:font-medium prose-a:duration-200 max-w-none prose-pre:scrollbar-hide",
+  standard: " max-w-screen 2xl:max-w-[90rem] mx-auto px-8",
 };
 // Combine the classes for the specified variant with any extra classes
 const classes = `${variantClasses[variant]} ${extraClass}`.trim();

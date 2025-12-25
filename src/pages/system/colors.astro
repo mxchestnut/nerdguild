@@ -34,7 +34,7 @@ const colors = [
       { name: "Base 800", class: "bg-base-800" },
       {
         name: "Base 900",
-        class: "bg-base-900 border-base-200 border  ",
+        class: "bg-base-900 border-base-200 dark:border-base-800 border  ",
       },
       { name: "Base 950", class: "bg-base-950" },
     ],
@@ -45,17 +45,21 @@ const colors = [
 <BaseLayout>
   <section>
     <Wrapper variant="standard" class="pb-8 pt-24">
-      <Text tag="h1" variant="textSM" class="font-medium text-base-900">
+      <Text
+        tag="h1"
+        variant="textSM"
+        class="font-medium text-base-900 dark:text-white"
+      >
         Colors
       </Text>
-      <div class="mt-8 border-t border-base-200">
+      <div class="mt-8 border-t border-base-200 dark:border-base-800">
         {
           colors.map((color) => (
-            <div class="grid grid-cols-1 gap-4 md:grid-cols-3 border-b py-8 border-base-200  ">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-3 border-b py-8 border-base-200 dark:border-base-800  ">
               <Text
                 tag="p"
                 variant="textXS"
-                class="font-medium uppercase text-base-900  "
+                class="font-medium uppercase text-base-900 dark:text-white  "
               >
                 {color.name}
               </Text>

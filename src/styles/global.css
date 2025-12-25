@@ -1,11 +1,10 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "tailwind-scrollbar-hide";
-@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* Typography */
-  --font-sans: Inter, sans-serif;
-  --font-display: InterVariable, sans-serif;
+  --font-sans: "Inter", sans-serif;
   /* accent  */
   --color-accent-50: oklch(0.982 0.029 125.9);
   --color-accent-100: oklch(0.961 0.065 127.2);
@@ -30,18 +29,4 @@
   --color-base-800: oklch(0.269 0 0);
   --color-base-900: oklch(0.205 0 0);
   --color-base-950: oklch(0.145 0 0);
-}
-:root {
-  /* Stylistic settings for Inter font*/
-  font-family: Inter, sans-serif;
-  font-feature-settings:
-    /*-------- NUMBERS --------*/
-    /* Tabular numbers */ "tnum"
-      1,
-    /* Slashed zero */ "zero" 1, /* Alternate one */ "cv01" 1,
-    /* Flat-top three */ "cv09" 1, /* Open four */ "cv02" 1,
-    /* Open six */ "cv03" 1, /* Open nine */ "cv04" 1,
-    /*-------- LETTERS --------*/ /* Square punctuation */ "ss08" 1,
-    /* Discretionary ligatures */ "dlig" 1, /* Simplified u */ "cv06" 1,
-    /* Capital G with spur */ "cv10" 1, /* Compact t */ "cv13" 1;
 }

@@ -1,40 +1,39 @@
 ---
-// Fundations
+// Assets
+import Logo from "@/components/assets/Logo.astro";
+// Foundations
 import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-// Scripts
-import ClockScript from "@/components/fundations/scripts/ClockScript.astro";
+const links = [
+  { href: "#_", text: "LinkedIn" },
+  { href: "#_", text: "Arena" },
+  { href: "#_", text: "GitHub" },
+];
+const year = new Date().getFullYear();
 ---
 
 <footer>
-  <Wrapper variant="standard">
-    <div
-      class="grid grid-cols-1 gap-4 md:grid-cols-3 border-b pt-8 pb-24 border-base-200"
-    >
-      <Text tag="h3" variant="textSM" class="text-base-900 font-bold uppercase">
-        Helsinki, Finland
-        <span id="clock" class="block text-base-600 text-xs"> </span>
-      </Text>
-      <div class="lg:col-span-2 space-y-4">
-        <Text
-          tag="p"
-          variant="textXS"
-          class="text-base-900 font-bold uppercase"
-        >
-          © Copyright Lexington Themes <span id="year"></span>. All rights
-          reserved. Designed and built in the Åland Islands by Michael
-          Andreuzza.
-        </Text>
-        <Text
-          tag="a"
-          variant="textXS"
-          class="text-base-900 hover:text-base-500 font-bold uppercase"
-          href="/system/overview"
-        >
-          Pages overview</Text
-        >
+  <Wrapper variant="standard" class="py-2">
+    <div class="grid grid-cols-2 lg:grid-cols-4 items-start">
+      <div
+        class="flex items-center gap-2 text-base-600 dark:text-base-300 text-xs tracking-tight"
+      >
+        {year}
+        <Logo />
+      </div>
+      <div class="flex flex-wrap gap-8 text-sm items-center">
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              class="text-base-600 tracking-tight  text-xs hover:text-base-900 dark:text-white transition-colors"
+            >
+              {link.text}
+            </a>
+          ))
+        }
       </div>
     </div>
   </Wrapper>
 </footer>
-<ClockScript />

@@ -1,75 +1,122 @@
 ---
-// Fundations
+// Foundations
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-// Data
-const data = [
+// Icons
+import ArrowRight from "@/components/fundations/icons/ArrowRight.astro";
+const speechesAndTalks = [
   {
-    period: "2023",
-    title: "The Evolution of Swiss Typography",
-    description: `Delivered a keynote on how Swiss typography principles have influenced modern digital design. Highlighted the role of grid systems and minimalism.`,
-    location: "International Design Conference, Zurich, Switzerland",
+    period: "2026",
+    title: "Interface Truths Under Constraint",
+    description:
+      "A talk on designing UI when performance, latency, and imperfect data are the default—how to make trade-offs explicit and still ship clarity.",
+    category: {
+      label: "Product Design",
+      href: "#_",
+    },
   },
   {
-    period: "2022",
-    title: "Mastering Grid Systems",
-    description: `Conducted a workshop on creating effective grid systems for print and digital media, emphasizing the precision and balance of Swiss design.`,
-    location: "Design Week, Basel, Switzerland",
+    period: "2026",
+    title: "Typography as Infrastructure",
+    description:
+      "Why type systems aren’t decoration: rhythm, hierarchy, and density as tools for cognition, speed, and decision-making in complex interfaces.",
+    category: {
+      label: "Typography",
+      href: "#_",
+    },
   },
   {
-    period: "2021",
-    title: "The Future of Minimalist Design",
-    description: `Participated in a panel discussion about the enduring appeal of minimalist design and its potential applications in emerging technologies.`,
-    location: "European Design Symposium, Geneva, Switzerland",
+    period: "2026",
+    title: "State Machines for Humans",
+    description:
+      "Practical approaches to modeling UI states, edge cases, and failure modes so products behave predictably under real-world pressure.",
+    category: {
+      label: "Engineering Systems",
+      href: "#_",
+    },
+  },
+  {
+    period: "2025",
+    title: "Speed is a Feature",
+    description:
+      "Perceived performance tactics: skeletons, progressive disclosure, optimistic UI, and knowing when faking speed destroys trust.",
+    category: {
+      label: "Performance UX",
+      href: "#_",
+    },
+  },
+  {
+    period: "2024",
+    title: "Design Critique Without Mercy",
+    description:
+      "A framework for critique that produces better work by isolating constraints, naming decisions, and killing ambiguity fast.",
+    category: {
+      label: "Practice",
+      href: "#_",
+    },
   },
 ];
 ---
 
-<section>
-  <Wrapper variant="standard">
-    <div
-      class="grid grid-cols-1 gap-4 md:grid-cols-3 border-b py-8 border-base-200"
-    >
-      <div class="lg:sticky lg:top-24 lg:z-40 self-start">
-        <Text
-          tag="h2"
-          variant="textSM"
-          class="text-base-900 font-bold uppercase"
-        >
-          Speaking
+<section class="scroll-mt-32" id="speaking">
+  <Wrapper variant="standard" class="py-12 lg:py-24">
+    <div class="grid grid-cols-1 lg:grid-cols-4 items-start">
+      <div class="lg:col-start-2">
+        <Text tag="p" variant="textSM" class="text-base-600 dark:text-base-300">
+          Speeches & Talks
+          <br />
+          Selected Sessions
         </Text>
       </div>
-      <div class="flex flex-col gap-12 lg:col-span-2">
-        {
-          data.map((data) => (
-            <article class="group relative grid grid-cols-1 gap-4 lg:grid-cols-3 lg:items-start ">
-              <div class="lg:col-span-2">
-                <Text
-                  tag="h3"
-                  variant="textSM"
-                  class="text-base-900   font-bold uppercase"
-                >
-                  {data.title}
-                </Text>
-                <Text
-                  tag="p"
-                  variant="textXS"
-                  class=" mt-1 text-base-600        "
-                >
-                  {data.description}
-                </Text>
-              </div>
+      <Text
+        tag="h2"
+        variant="textXL"
+        class="font-semibold leading-snug tracking-tighter lg:col-span-2 text-base-900 dark:text-white"
+      >
+        Speeches & Talks
+      </Text>
+    </div>
+    <div class="flex flex-col gap-12 mt-12">
+      {
+        speechesAndTalks.map((item) => (
+          <article class="py-12 border-t border-base-200 dark:border-base-800">
+            <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 items-start">
+              {/* Year */}
               <Text
                 tag="p"
                 variant="textXS"
-                class="text-base-600    lg:ml-auto"
+                class="text-base-600 dark:text-base-300 uppercase"
               >
-                <time datetime={data.period}> {data.period}</time>
+                {item.period} — {item.category.label}
               </Text>
-            </article>
-          ))
-        }
-      </div>
+              {/* Title */}
+              <Text
+                tag="h3"
+                variant="textLG"
+                class="text-base-900 dark:text-white leading-tight font-semibold"
+              >
+                {item.title}
+              </Text>
+              {/* Description */}
+              <Text
+                tag="p"
+                variant="textSM"
+                class="text-base-600 dark:text-base-300"
+              >
+                {item.description}
+              </Text>
+              {/* Category (linked, original position) */}
+              <a
+                href={item.category.href}
+                class=" lg:ml-auto text-base-900 dark:text-white hover:text-accent-600 transition"
+              >
+                <span class="sr-only"> Visit {item.category.label}</span>
+                <ArrowRight class="size-4" />
+              </a>
+            </div>
+          </article>
+        ))
+      }
     </div>
   </Wrapper>
 </section>
