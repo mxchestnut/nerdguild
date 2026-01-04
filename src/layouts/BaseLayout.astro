@@ -14,5 +14,28 @@ import Navigation from "@/components/global/Navigation.astro";
     <Navigation />
     <main class="grow"><slot /></main>
     <Footer />
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const triggers = document.querySelectorAll('.accordion-trigger');
+        
+        triggers.forEach(trigger => {
+          trigger.addEventListener('click', () => {
+            const postId = trigger.getAttribute('data-post-id');
+            const content = document.querySelector(`.accordion-content[data-post-id="${postId}"]`);
+            
+            if (content) {
+              const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+              
+              if (isOpen) {
+                content.style.maxHeight = '0';
+              } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+              }
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

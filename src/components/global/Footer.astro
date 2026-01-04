@@ -6,9 +6,9 @@ import Text from "@/components/fundations/elements/Text.astro";
 import Button from "@/components/fundations/elements/Button.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 const links = [
-  { href: "#_", text: "LinkedIn" },
-  { href: "#_", text: "Arena" },
-  { href: "#_", text: "GitHub" },
+  { href: "https://donate.stripe.com/test_your_link", text: "Support", external: true },
+  { href: "https://discord.gg/TFnwuGB5", text: "Discord", external: true },
+  { href: "https://github.com/mxchestnut/nerdguild", text: "GitHub", external: true },
 ];
 const year = new Date().getFullYear();
 ---
@@ -19,15 +19,16 @@ const year = new Date().getFullYear();
       <div
         class="flex items-center gap-2 text-base-600 dark:text-base-300 text-xs tracking-tight"
       >
-        {year}
-        <Logo />
+        {year} Nerdchurch Partners Corporation
       </div>
       <div class="flex flex-wrap gap-8 text-sm items-center">
         {
           links.map((link) => (
             <a
               href={link.href}
-              class="text-base-600 tracking-tight  text-xs hover:text-base-900 dark:text-white transition-colors"
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noopener noreferrer" : undefined}
+              class="text-base-600 tracking-tight text-xs hover:text-base-900 dark:text-base-300 hover:dark:text-white transition-colors"
             >
               {link.text}
             </a>

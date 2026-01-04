@@ -7,36 +7,24 @@ import { getAllPosts, formatDate } from "@/lib/posts";
 
 // Fetch all posts
 const posts = await getAllPosts();
-const allPosts = posts.slice(0, 6).map(post => ({
-  date: formatDate(post.data.publishedAt),
-  title: post.data.title,
-  description: post.data.description,
-  category: post.data.category,
-  slug: post.slug,
-  content: post.body,
-}));
+const allPosts = await Promise.all(
+  posts.slice(0, 6).map(async (post) => {
+    const { Content } = await post.render();
+    return {
+      date: formatDate(post.data.publishedAt),
+      title: post.data.title,
+      description: post.data.description,
+      category: post.data.category,
+      slug: post.slug,
+      Content,
+    };
+  })
+);
 ---
 
 <section class="scroll-mt-32" id="all">
   <Wrapper variant="standard" class="py-12 lg:py-24">
-    <div class="grid grid-cols-1 lg:grid-cols-4 items-start">
-      <div class="lg:col-start-2">
-        <Text tag="p" variant="textSM" class="text-base-600 dark:text-base-300"
-          >Latest Posts
-          <br />
-          All Categories</Text
-        >
-      </div>
-      <Text
-        tag="h2"
-        variant="textXL"
-        class="font-semibold leading-snug text-left tracking-tighter lg:col-span-2 text-base-900 dark:text-white"
-      >
-        All
-      </Text>
-    </div>
-
-    <div class="flex flex-col gap-12 mt-8">
+    <div class="flex flex-col gap-12">
       {
         allPosts.map((post, index) => (
           <article class="py-12 border-t border-base-200 dark:border-base-800">
@@ -81,8 +69,9 @@ const allPosts = posts.slice(0, 6).map(post => ({
               data-post-id={`all-${index}`}
               style="max-height: 0;"
             >
-              <div class="prose prose-base dark:prose-invert max-w-none lg:col-start-2 lg:col-span-2 lg:ml-[calc(25%)]">
-                <div set:html={post.content} />
+              <div class="prose prose-base dark:prose-invert max-w-none">
+                <post.Content />
+              </div>
               </div>
             </div>
           </article>
@@ -91,26 +80,3 @@ const allPosts = posts.slice(0, 6).map(post => ({
     </div>
   </Wrapper>
 </section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const triggers = document.querySelectorAll('.accordion-trigger');
-    
-    triggers.forEach(trigger => {
-      trigger.addEventListener('click', () => {
-        const postId = trigger.getAttribute('data-post-id');
-        const content = document.querySelector(`.accordion-content[data-post-id="${postId}"]`);
-        
-        if (content) {
-          const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
-          
-          if (isOpen) {
-            content.style.maxHeight = '0';
-          } else {
-            content.style.maxHeight = content.scrollHeight + 'px';
-          }
-        }
-      });
-    });
-  });
-</script>

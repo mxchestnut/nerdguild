@@ -6,15 +6,20 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 import { getPostsByCategory, formatDate } from "@/lib/posts";
 
 const posts = await getPostsByCategory('Nerd Guild', 6);
-const nerdGuildPosts = posts.map(post => ({
-  date: formatDate(post.data.publishedAt),
-  title: post.data.title,
-  description: post.data.description,
-  category: post.data.category,
-  slug: post.slug,
-  content: post.body,
-  tags: post.data.tags || [],
-}));
+const nerdGuildPosts = await Promise.all(
+  posts.map(async (post) => {
+    const { Content } = await post.render();
+    return {
+      date: formatDate(post.data.publishedAt),
+      title: post.data.title,
+      description: post.data.description,
+      category: post.data.category,
+      slug: post.slug,
+      Content,
+      tags: post.data.tags || [],
+    };
+  })
+);
 ---
 
 <section class="scroll-mt-32" id="nerd-guild">
@@ -85,8 +90,9 @@ const nerdGuildPosts = posts.map(post => ({
               data-post-id={`nerd-guild-${index}`}
               style="max-height: 0;"
             >
-              <div class="prose prose-base dark:prose-invert max-w-none lg:col-start-2 lg:col-span-2 lg:ml-[calc(25%)]">
-                <div set:html={post.content} />
+              <div class="prose prose-base dark:prose-invert max-w-none">
+                <post.Content />
+              </div>
               </div>
             </div>
           </article>
@@ -95,26 +101,3 @@ const nerdGuildPosts = posts.map(post => ({
     </div>
   </Wrapper>
 </section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const triggers = document.querySelectorAll('.accordion-trigger');
-    
-    triggers.forEach(trigger => {
-      trigger.addEventListener('click', () => {
-        const postId = trigger.getAttribute('data-post-id');
-        const content = document.querySelector(`.accordion-content[data-post-id="${postId}"]`);
-        
-        if (content) {
-          const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
-          
-          if (isOpen) {
-            content.style.maxHeight = '0';
-          } else {
-            content.style.maxHeight = content.scrollHeight + 'px';
-          }
-        }
-      });
-    });
-  });
-</script>

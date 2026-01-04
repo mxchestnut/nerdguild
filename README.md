@@ -1,124 +1,61 @@
-# Prima Persona
+# Nerd Guild
 
-## Template Integrations
-- Tailwind CSS v4 
-- Astro SEO - Powered by [@astrolib/seo](https://github.com/onwidget/astrolib/tree/main/packages/seo)
-- Astro Sitemap - https://docs.astro.build/en/guides/integrations-guide/sitemap/
+**Digital home for Nerdchurch Partners Corporation**
 
-## Template Structure
+## About Us
 
-The template follows a typical Astro project structure. You'll find the following key directories and files:
+Nerdchurch Partners Corporation (NPC) is a nonprofit building inclusive communities at the intersection of faith, creativity, and curiosity. We create spaces—digital and physical—where people who love ideas, stories, and meaning can belong, collaborate, and grow.
 
+NPC operates through a constellation of programs designed to turn connection into action. From **Roots and Reach**, which builds the organizational infrastructure that keeps our work sustainable, to **The Beacon Project**, which equips community members to lead safe, trauma-informed peer support groups, our focus is always on accessibility, care, and shared leadership.
 
-```
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Our creative and cultural initiatives fuel that mission. **Nerd Church** offers an open, welcoming fellowship centered on reflection, creativity, and compassion. **Hieroscope** celebrates lifelong learning by inviting people to share deep dives into the subjects they love. **Nerd Guild** serves as our bridge from imagination to impact, transforming creative passion into partnerships, advocacy, and community action.
 
-- `src/pages/`: Contains `.astro` and `.md` files. Each file becomes a route in your project based on its name.
-- `src/components/`: Ideal for placing your Astro/React/Vue/Svelte/Preact components.
-- `public/`: For static assets such as images that you want to serve directly.
+We believe curiosity is sacred, creativity is connective, and community is something you build—together. This repository powers the digital home for that work.
 
-## Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## Tech Stack
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
+Full Disclaimer- I don't know what I'm doing. Please check and double check if you decide to replicate. 
 
-Learn more - Explore more through Astro's official [documentation](https://docs.astro.build).
-------
-Updated on 20th June 2025
+This site is built with modern web technologies focused on performance and simplicity:
 
-- Full redesign
-- Added light/dark mode
+- **[Astro v5](https://astro.build)** - Static site generator
+- **[Tailwind CSS v4](https://tailwindcss.com)** - Utility-first CSS framework
+- **[Decap CMS](https://decapcms.org)** - Git-based headless CMS for content management
+- **[Astro Content Collections](https://docs.astro.build/en/guides/content-collections/)** - Type-safe markdown content management
+- **[@astrolib/seo](https://github.com/onwidget/astrolib/tree/main/packages/seo)** - SEO optimization
+- **[Astro Sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)** - Automatic sitemap generation
 
-## This update includes:
- Added Image component from Astro
-  The Astro Image component is coming back to the themes
+### Security Features
+- **Husky** - Pre-commit hooks for code quality
+- **Secretlint** - Prevents accidental secret commits
+- **Lint-staged** - Runs linters on staged files
 
-- Reusable components
-  This template now includes reusable components, such as the `Text` component:
-- Button Component  
-  A customizable button component with options to fit your design needs:
+---
 
-- **Variants:** Choose from predefined styles like `primary` (dark background) and `secondary` (lighter background), with support for dark mode.
-- **Sizes:** Select `small` or `medium` for different button heights and padding.
-- **Gaps:** Control the spacing between content with the `gapSize` prop (either `small` or `medium`).
-- **Custom Classes:** Apply additional styles using the `class` prop.
-- **Slots:** Include icons or extra content with optional `left-icon` and `right-icon` slots.  
-  Example usage:
+## Contributing
 
-```astro
-<!-- Default button -->
-<Button size="small" variant="primary">Primary small</Button>
-<!-- Button with icon -->
-<Button iconOnly size="small" variant="primary">·</Button>
-<!-- Button as link -->
-<Button isLink={true} href="#_" size="small" variant="primary">Primary small</Button>
-```
+This is the digital home for our nonprofit community. If you'd like to contribute or get involved:
 
-- Wrapper Component  
-  A flexible layout component that helps with consistent spacing and alignment.
+- Join our [Discord](https://discord.gg/TFnwuGB5)
+- Follow us on [GitHub](https://github.com/mxchestnut/npc)
+- [Support our work](https://donate.stripe.com/test_your_link)
 
-- **Variants:** The default `standard` variant includes responsive widths, centered content, and padding.
-- **Custom Classes:** Add or change styles with the `class` prop.
-- **Content Slot:** Easily add any child components or content inside.
+---
 
-```astro
-<Wrapper variant="standard">
-Your content goes here
-</Wrapper>
-```
-------
-Updated on 10th October 2025
+## License
 
-## This update includes:
-- New design
-------
-Updated on 18th January 2024
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## This update includes:
-- Full redesign of the template
+© 2026 Nerdchurch Partners Corporation
 
-On this version, Tailwind CSS is now beta the alpha version from Tailwind CSS V4, this means that there's no `tailwind.config.mjs` file anymore. From now on, all style will be added on the `css` file. You can find the styles on the `src/styles/global.css` file.
+---
 
+## Credits
 
-- Astro SEO by @astrolib/seo
-This update includes the integration of the Astro SEO package by @astrolib/seo, is an integration that makes managing your SEO easier in Astro projects. It is fully based on the excellent Next SEO library
+Built with the (**Purchased**) [PrimaPersona](https://lexingtonthemes.com) theme by Lexington Themes, customized for our mission and community.
 
-- Added Image component from Astro
-The Astro Image component is coming back to the themes
+---
 
-- Reusable components
-This template now includes reusable components, such as the `Text` component:
-- Text Component
-A flexible and reusable typography component for dynamic text elements. It allows you to:
-
-- Dynamically set the HTML tag (e.g., `h1`, `p`, `span`) via the `tag` prop.
-- Apply predefined text styling variants (e.g., `displayXL`, `textMD`) for consistency across your project.
-- Add custom classes for additional styling with the `class` prop.
-
-Example usage:
-```astro
-<Text tag="h1" variant="displayXL" class="text-center">
-  Welcome to the new version!
-</Text>
-```
------
-
-### [Support](https://lexingtonthemes.com/legal/support/)
-### [Documentation](https://lexingtonthemes.com/documentation/quick-start/)
-### [Get your bundle](https://lexingtonthemes.com)
-
-
+*We believe curiosity is sacred, creativity is connective, and community is something you build—together.*
