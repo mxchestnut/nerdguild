@@ -1,4 +1,4 @@
-# Nerd Guild
+# Nerd Church
 
 **Digital home for Nerdchurch Partners Corporation**
 
@@ -8,7 +8,7 @@ Nerdchurch Partners Corporation (NPC) is a nonprofit building inclusive communit
 
 NPC operates through a constellation of programs designed to turn connection into action. From **Roots and Reach**, which builds the organizational infrastructure that keeps our work sustainable, to **The Beacon Project**, which equips community members to lead safe, trauma-informed peer support groups, our focus is always on accessibility, care, and shared leadership.
 
-Our creative and cultural initiatives fuel that mission. **Nerd Church** offers an open, welcoming fellowship centered on reflection, creativity, and compassion. **Hieroscope** celebrates lifelong learning by inviting people to share deep dives into the subjects they love. **Nerd Guild** serves as our bridge from imagination to impact, transforming creative passion into partnerships, advocacy, and community action.
+Our creative and cultural initiatives fuel that mission. **Nerd Church** offers an open, welcoming fellowship centered on reflection, creativity, and compassion. **Hieroscope** celebrates lifelong learning by inviting people to share deep dives into the subjects they love. **Nerd Church** serves as our bridge from imagination to impact, transforming creative passion into partnerships, advocacy, and community action.
 
 We believe curiosity is sacred, creativity is connective, and community is something you build—together. This repository powers the digital home for that work.
 
