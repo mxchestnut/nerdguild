@@ -29,10 +29,11 @@
         "category": {
           "type": "string",
           "enum": [
-            "Engineering",
-            "Design",
-            "Product",
-            "Uncategorized"
+            "Hieroscope",
+            "The Beacon Project",
+            "Roots & Reach",
+            "Nerd Church",
+            "Nerd Guild"
           ]
         },
         "tags": {

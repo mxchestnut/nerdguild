@@ -6,7 +6,7 @@ const postsCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     publishedAt: z.date(),
-    category: z.enum(['Engineering', 'Design', 'Product', 'Uncategorized']),
+    category: z.enum(['Hieroscope', 'The Beacon Project', 'Roots & Reach', 'Nerd Church', 'Nerd Guild']),
     tags: z.array(z.string()).optional(),
     draft: z.boolean().optional().default(false),
   }),
